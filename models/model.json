@@ -4,20 +4,52 @@
     "createdAt": "DateTime",
     "createdBy": "String",
     "activityId": "Integer",
-    "isInstance": "Boolean"
+    "isInstance": "Boolean",
+    "object": "String",
+    "variables": "String"
   },
 
   "activity": {
     "id": "Integer",
     "workflowId": "Integer",
+    "type": "Enum(Task,Approval,Email,Branch,Switch,Sequence,Condition,Loop)",
     "name": "String",
     "label": "String",
+    "expression": "String",
     "parentActivityId": "Integer",
     "parentOrder": "Integer",
     "executionType": "Enum(Interaction,Script,Secuential,Parallel)",
     "childrenActivities": "Array(activity)",
     "status": "Enum(Waiting,Started,Closed,Cancelled)",
     "isInstance": "Boolean",
-    "instructions": "String"
+    "instructions": "String",
+    "emailFrom": "String",
+    "emailTo": "String",
+    "emailSubject": "String",
+    "assignees": "Array(activityAssignees)",
+    "closeOptions": "Array(options)",
+    "closeVariable": "String"
+  },
+  "activityAssignees": {
+    "type": "Enum(Email,User,Group)",
+    "Assignee": "String",
+    "CloseOptions": "Array(options)"
+  },
+  "variables": {
+    "id": "Integer",
+    "name": "String",
+    "type": "Enum(Input,TextArea,Date,Select,Radio,Checkboxes,Number,Boolean,User,Group,Array,Object)",
+    "defaultValue": "String"
+  },
+  "variableOptions": {
+    "variableId": "Integer",
+    "optionId": "Integer"
+  },
+
+  "options": {
+    "id": "Integer",
+    "Order": "String",
+    "Value": "String",
+    "Name": "String"
   }
 }
