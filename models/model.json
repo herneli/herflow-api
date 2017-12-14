@@ -1,0 +1,23 @@
+{
+  "workflow": {
+    "name": "String",
+    "createdAt": "DateTime",
+    "createdBy": "String",
+    "activityId": "Integer",
+    "isInstance": "Boolean"
+  },
+
+  "activity": {
+    "id": "Integer",
+    "workflowId": "Integer",
+    "name": "String",
+    "label": "String",
+    "parentActivityId": "Integer",
+    "parentOrder": "Integer",
+    "executionType": "Enum(Interaction,Script,Secuential,Parallel)",
+    "childrenActivities": "Array(activity)",
+    "status": "Enum(Waiting,Started,Closed,Cancelled)",
+    "isInstance": "Boolean",
+    "instructions": "String"
+  }
+}
